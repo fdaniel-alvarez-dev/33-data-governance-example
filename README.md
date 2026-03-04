@@ -1,4 +1,4 @@
-# 33-dexcom-staff-devops-engineer
+# 33-data-governance-example
 
 A reference data platform blueprint with pragmatic governance: quality checks, lineage, access controls, and CI for data assets.
 
