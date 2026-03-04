@@ -1,6 +1,9 @@
-# 33-aws-reliability-security
+# 33-aws-reliability-security-oracle
 
 A reference data platform blueprint with pragmatic governance: quality checks, lineage, access controls, and CI for data assets.
+
+Focus: oracle
+
 
 ## The top pains this repo addresses
 1) Designing a resilient, scalable cloud platform foundation—Kubernetes/container orchestration, networking, and standard patterns teams can reuse.
