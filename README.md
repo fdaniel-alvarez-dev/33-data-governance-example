@@ -1,4 +1,4 @@
-# 33-data-governance-example
+# 33-aws-automation-blueprint
 
 A reference data platform blueprint with pragmatic governance: quality checks, lineage, access controls, and CI for data assets.
 
