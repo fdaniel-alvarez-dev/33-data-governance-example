@@ -1,8 +1,7 @@
 # 33-aws-reliability-security-oracle
 
-A reference data platform blueprint with pragmatic governance: quality checks, lineage, access controls, and CI for data assets.
-
-Focus: oracle
+A portfolio-grade repository that demonstrates **multi-cloud DevOps validation patterns**:
+offline-safe demos, deterministic guardrails, and explicit “demo vs production” test modes.
 
 
 ## The top pains this repo addresses
@@ -12,12 +11,58 @@ Focus: oracle
 
 ## Quick demo (local)
 ```bash
-make setup
-make demo
+make demo-offline
 make test
 ```
 
 What you get:
-- a tiny ETL pipeline (CSV → Parquet)
-- schema validation with `pandera`
-- a basic “trust contract” (docs + tests + CI)
+- an offline demo pipeline output (no pip installs needed)
+- a multicloud guardrails report (`artifacts/multicloud_guardrails.json`)
+- explicit `TEST_MODE=demo|production` tests with safe production gating
+
+## Tests (two explicit modes)
+
+- `TEST_MODE=demo` (default): offline-only checks, deterministic artifacts
+- `TEST_MODE=production`: real integrations (requires explicit opt-in + dependencies)
+
+Run demo mode:
+
+```bash
+make test-demo
+```
+
+Run production mode:
+
+```bash
+make test-production
+```
+
+Optional production checks:
+- Set `TERRAFORM_VALIDATE=1` to validate `infra/examples/dev/` (requires `terraform`)
+
+## Guardrails
+
+Generate evidence:
+
+```bash
+python3 tools/multicloud_guardrails.py --format json --out artifacts/multicloud_guardrails.json
+```
+
+## Sponsorship and contact
+
+Sponsored by:
+CloudForgeLabs  
+https://cloudforgelabs.ainextstudios.com/  
+support@ainextstudios.com
+
+Built by:
+Freddy D. Alvarez  
+https://www.linkedin.com/in/freddy-daniel-alvarez/
+
+For job opportunities, contact:
+it.freddy.alvarez@gmail.com
+
+## License
+
+Personal, educational, and non-commercial use is free. Commercial use requires paid permission.
+See `LICENSE` and `COMMERCIAL_LICENSE.md`.
